@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<form>
+  <fieldset name="event">
+	<field
+        name="id"
+        type="hidden"
+	/>
+	<field
+        name="title"
+        id="title"
+        type="text"
+        label="COM_PBEVENTS_EVENT_NAME"
+        description="COM_PEBEVENTS_TOOLTIP_EVENT"
+        size="128"
+        class="inputbox"
+        required="true"
+	/>
+	<field
+        name="description"
+        id="description"
+        class="inputbox"
+        type="editor"
+        label="COM_PBEVENTS_EVENT_DESCRIPTION"
+        description="COM_PEBEVENTS_TOOLTIP_DESCRIPTION"
+        filter="safehtml"
+        required="false"
+	/>
+	<field
+        name="price"
+        id="price"
+        class="inputbox"
+        type="money"
+        label="COM_PEBEVENTS_EVENTS_PRICE"
+        description="COM_PEBEVENTS_TOOLTIP_PRICE"
+        size="100"
+        filter="floating"
+        required="true"
+	/>
+	<field
+        name="panelist"
+        id="panelist"
+        class="inputbox"
+        type="text"
+        label="COM_PEBEVENTS_PANELIST"
+        description="COM_PEBEVENTS_TOOLTIP_PANELIST"
+        size="256"
+        required="false"
+	/>
+</fieldset>
+	
+<fieldset name="event-config" >
+	<field
+        name="max_people"
+        id="max_people"
+        class="inputbox"
+        type="text"
+        label="COM_PBEVENTS_MAX_PEOPLE"
+        description="COM_PEBEVENTS_TOOLTIP_PEOPLE"
+        size="128"
+        filter="integer"
+        required="false"
+        default="0"
+	/>
+	<field
+        name="show_counter"
+        id="show_counter"
+        class="inputbox"
+        type="checkbox"
+        label="COM_PBEVENTS_SHOW_COUNTER"
+        description="COM_PEBEVENTS_TOOLTIP_SHOW_COUNTER"
+        filter="boolean"
+        default="0"
+        onclick="!this.checked ? clone_as_hidden(this): remove_clone_hidden(this);"
+	/>
+	<field
+        name="email_admin_success"
+        id="email_admin_success"
+        class="inputbox"
+        type="checkbox"
+        label="COM_PBEVENTS_NOTIFY_SUCCESS"
+        description="COM_PEBEVENTS_TOOLTIP_SUCCESS_EMAIL_ADMIN"
+        filter="boolean"
+        default="0"
+        onclick="!this.checked ? clone_as_hidden(this): remove_clone_hidden(this);"
+	/>
+	<field
+        name="email_admin_failure"
+        id="email_admin_failure"
+        class="inputbox"
+        type="checkbox"
+        label="COM_PBEVENTS_NOTIFY_FAILURE"
+        description="COM_PEBEVENTS_TOOLTIP_FAILURE_EMAIL_ADMIN"
+        filter="boolean"
+        default="0"
+        onclick="!this.checked ? clone_as_hidden(this): remove_clone_hidden(this);"
+	/>
+</fieldset>
+
+<fieldset name="event-dates" >
+    <field
+        name="hstart"
+        id="hstart"
+        class="inputbox"
+        type="text"
+        label="COM_PEBEVENTS_EVENTS_START_HOUR"
+        description="Unique Hour of event"
+        format="%H:%M:%S"
+        required="false"
+	/>
+    <field
+        name="hend"
+        id="hend"
+        class="inputbox"
+        type="text"
+        label="COM_PEBEVENTS_EVENTS_END_HOUR"
+        description="Unique Hour of event"
+        format="%H:%M:%S"
+        required="false"
+	/>
+</fieldset>
+</form>
+
+
+
+
+
+
+
+
+

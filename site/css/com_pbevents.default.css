@@ -1,0 +1,43 @@
+@CHARSET "UTF-8";
+
+.event-submit {
+	cursor: pointer;
+}
+
+.div-input-submit {
+	text-align: center;
+	margin-top: 25px;
+}
+
+p#alert-user-registred, #alert-no-article {
+	color: red;
+}
+
+.event-info {
+	margin-bottom: 15px;
+}
+
+.event-info > p {
+	margin-top: 10px;
+	margin-bottom: 10px;
+	margin-left: 10px;
+}
+
+.event-info > p > i {
+	margin-left: 5px;
+}
+
+p#alert-max-people {
+	color: blue;
+	text-align: center;
+}
+
+div#event-people-number {
+	border: dashed 1px gray;
+	margin-top: 5px;
+	margin-bottom: 5px;
+	padding: 10px;
+}
+div#event-people-number > p{
+	margin: 0;
+}

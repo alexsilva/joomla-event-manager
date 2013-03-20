@@ -1,0 +1,55 @@
+@CHARSET "UTF-8";
+
+.date-field {
+	margin-bottom: 125px;
+}
+
+.controls > textarea {
+	height: 100px;
+	width: 65%;
+}
+
+.btn-delete-control > span {
+	margin-left: 1px;
+	margin-bottom: 0px !important;
+}
+
+.btn-delete-control > img, span {
+	vertical-align: middle;
+}
+
+.btn-delete-control, .btn-add-control, .btn-henable-control {
+	align: center !important;
+	padding: 1px !important;
+}
+
+.btn-delete-control, .btn-add-control {
+	border: dashed 1px gray;
+	cursor: pointer;
+}
+
+.btn-henable-control > span {
+	margin-left: 2px !important;
+	margin-bottom: 0px !important;
+	vertical-align: middle;
+}
+.btn-henable-control > input {
+	margin-bottom: 0px !important;
+	vertical-align: middle !important;
+	padding-top: 0px !important;
+}
+
+.btn-add-control {
+	border: double 4px gray;
+}
+
+.btn-add-control > span {
+	margin-left: 1px !importante;
+	margin-bottom: 0px !important;
+}
+
+.btn-add-control > img, span {
+	vertical-align: middle;
+}
+
+

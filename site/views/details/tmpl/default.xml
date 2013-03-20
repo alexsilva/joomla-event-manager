@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<metadata>
+	<layout title="PBEvents Event Detail" hidden="false">
+		<message>A Standard PBEvents Layout</message>
+	</layout>
+	<state>
+		<name>PBEvents Detail</name>
+		<description>PBEvents Detail Layout.</description>
+	</state>
+</metadata>

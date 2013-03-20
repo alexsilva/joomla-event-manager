@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="component" version="3.0" method="upgrade">
+	<name>com_pbevents</name>
+	<!-- The following elements are optional and free of formatting constraints -->
+	 
+	<creationDate>2013-03-01</creationDate>
+	<author>Alex Sandro</author>
+	<authorEmail>geniofuturo@gmail.com</authorEmail>
+	<authorUrl></authorUrl>
+	<copyright>Copyright Info</copyright>
+	<license>License Info</license>
+	<!--  The version string is recorded in the components table -->
+	<version>1.1.1</version>
+	<!-- The description is optional and defaults to the name -->
+	<description>A component used for booking events.</description>
+	
+	<!-- Site Main File Copy Section -->
+	<!-- Note the folder attribute: This attribute describes the folder
+	  to copy FROM in the package to install therefore files copied
+	  in this section are copied from /site/ in the package -->
+	<files folder="site">
+		<filename>controller.php</filename>
+		<filename>index.html</filename>
+		<filename>pbevents.php</filename>
+		<folder>views</folder>
+		<folder>models</folder>
+		<folder>utils</folder>
+		<folder>helpers</folder>
+		<folder>scripts</folder>
+		<folder>css</folder>
+	</files> 
+	
+	<scriptfile>script.php</scriptfile>
+	
+	<languages folder="site">
+		<language tag="en-GB">language/en-GB/en-GB.com_pbevents.ini</language>
+		<language tag="en-GB">language/en-GB/en-GB.com_pbevents.sys.ini</language>
+		<language tag="pt-BR">language/pt-BR/pt-BR.com_pbevents.ini</language>
+		<language tag="pt-BR">language/pt-BR/pt-BR.com_pbevents.sys.ini</language>
+	</languages>
+	
+	<administration>
+		<!-- Administration Menu Section -->
+		<menu>com_pbevents</menu>
+		
+		<!-- Administration Main File Copy Section -->
+		<files folder="admin">
+		    <filename>pbevents.php</filename>
+			<filename>controller.php</filename>
+			<filename>index.html</filename>
+			<folder>views</folder>
+			<folder>helpers</folder>
+			<folder>scripts</folder>
+			<folder>css</folder>
+			<folder>models</folder>
+			<folder>sql</folder>
+			<folder>controllers</folder>
+			<folder>images</folder>
+			<folder>tables</folder>
+		</files>
+		
+		<languages folder="admin">
+			<language tag="en-GB">language/en-GB/en-GB.com_pbevents.ini</language>
+			<language tag="en-GB">language/en-GB/en-GB.com_pbevents.sys.ini</language>
+			<language tag="pt-BR">language/pt-BR/pt-BR.com_pbevents.ini</language>
+			<language tag="pt-BR">language/pt-BR/pt-BR.com_pbevents.sys.ini</language>
+		</languages>
+	</administration>
+	
+	<install>
+		<sql>
+			<file charset="utf8" driver="mysql">sql/install.sql</file>
+		</sql>
+	</install>
+	<uninstall>
+		<sql>
+			<file charset="utf8" driver="mysql">sql/uninstall.sql</file>
+		</sql>
+	</uninstall>
+
+</extension>
