@@ -50,6 +50,18 @@
 </fieldset>
 	
 <fieldset name="event-config" >
+    <field
+		name="catid"
+		type="category"
+		extension="com_pbevents"
+		class="inputbox"
+		default=""
+		label="COM_PEBEVENTS_PEBEVENTS_FIELD_CATID_LABEL"
+		description="COM_PEBEVENTS_PEBEVENTS_FIELD_CATID_DESC"
+		required="true"
+		>
+		<option value="0">JOPTION_SELECT_CATEGORY</option>
+	</field>
 	<field
         name="max_people"
         id="max_people"
