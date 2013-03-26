@@ -7,6 +7,7 @@ CREATE TABLE `#__pbevents_events` (
   `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT,
   `title` varchar(256),
   `description` text,
+  `catid` int(11) NOT NULL DEFAULT '0',
   `price` FLOAT(11,2) DEFAULT 0.00,
   `panelist` varchar(256) DEFAULT NULL,
   `hstart` TIME DEFAULT NULL,
