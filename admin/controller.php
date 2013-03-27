@@ -64,7 +64,7 @@ class PbeventsController extends JControllerLegacy
 		
 		$canDo = PBEventsHelper::getActions();
 		
-		// definindo níves de permissões.
+		// agindo conforme as permiss�es
 		if ($canDo->get('core.create'))
 		{
 			JToolBarHelper::addNew('event.add');
