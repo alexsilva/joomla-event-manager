@@ -77,9 +77,9 @@ class PbeventsController extends JControllerLegacy
 		{
 			JToolBarHelper::deleteList(JText::_("COM_PBEBENTS_WARNNING_ONDELETE"), "events.delete");
 		}
-		
-		JToolBarHelper::preferences("com_pbevents");
-		
+		if ($canDo->get('core.admin')) {
+			JToolBarHelper::preferences("com_pbevents");
+		}
 		// get attendees for events and set date to the right timezone!
 		$config =& JFactory::getConfig();
 		
