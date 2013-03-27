@@ -18,8 +18,19 @@ abstract class PBEventsHelper
 	/**
 	 * Configure the Linkbar.
 	 */
-	public static function addSubmenu($submenu) 
-	{
+	public static function addSubmenu($submenu)
+	{	
+		JSubMenuHelper::addEntry(JText::_('COM_PBEVENTS_DASHBOARD'), 'index.php?option=com_pbevents',
+								$submenu=='display');
+		
+		JSubMenuHelper::addEntry(JText::_('COM_PBEVENTS_ADMIN_LIST_EVENTS'), 'index.php?option=com_pbevents&task=listevents', 
+								$submenu == 'listevents');
+		
+		JSubMenuHelper::addEntry(JText::_('COM_PBEVENTS_CONFIGURATION'),'index.php?option=com_pbevents&task=editconfiguration',
+								$submenu == 'editconfiguration');
+		
+		JSubMenuHelper::addEntry(JText::_('COM_PBEVENTS_SUBMENU_CATEGORIES'), 'index.php?option=com_categories&view=categories&extension=com_pbevents', 
+								$submenu == 'categories');
 	}
 	
 	/**
@@ -102,6 +113,7 @@ abstract class PBEventsHelper
 	 */
 	public static function getActions($messageId = 0)
 	{
+		
 		$user	= JFactory::getUser();
 		$result	= new JObject;
  		

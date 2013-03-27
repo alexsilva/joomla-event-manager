@@ -27,8 +27,7 @@ class PbeventsController extends JControllerLegacy
 		$plugin = JPluginHelper::getPlugin('user', 'profile10');
 		
 		// has the plugin been activated?
-		if (count($plugin) == 0)
-		{
+		if (count($plugin) == 0) {
 			$app->enqueueMessage(JText::_('COM_PEBEVENTS_PROFILE_NOT_ENABLE'), 'error');
 		}
 		
@@ -62,6 +61,7 @@ class PbeventsController extends JControllerLegacy
 	public function listevents()
 	{
 		JToolBarHelper::title(JText::_('COM_PBEVENTS_EVENTS_MANAGER').' '.JText::_('COM_PBEVENTS_ADMIN_LIST_EVENTS'), 'generic.png');
+		
 		$canDo = PBEventsHelper::getActions();
 		
 		// definindo níves de permissões.
