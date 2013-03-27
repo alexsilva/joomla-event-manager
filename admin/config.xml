@@ -28,6 +28,7 @@
 			label="COM_PBEVENTS_FIELD_EMAIL_SUCCESS_LABEL"
 			description="COM_PBEVENTS_FIELD_EMAIL_SUCCESS_DESC"
 			ddefault="COM_PBEVENTS_FIELD_EMAIL_SUCCESS_DEFAULT"
+			filter="safehtml"
 		/>
 		
 		<field
@@ -43,6 +44,7 @@
 			label="COM_PBEVENTS_FIELD_EMAIL_FAILED_LABEL"
 			description="COM_PBEVENTS_FIELD_EMAIL_FAILED_DESC"
 			ddefault="COM_PBEVENTS_FIELD_EMAIL_FAILED_DEFAULT"
+			filter="safehtml"
 		/>
 	</fieldset>
 	<fieldset
