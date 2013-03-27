@@ -9,7 +9,7 @@
 
 defined('JPATH_PLATFORM') or die;
 
-JFormHelper::loadFieldClass('textarea');
+JFormHelper::loadFieldClass('editor');
 
 /**
  * Form Field class for the Joomla Platform.
@@ -21,7 +21,7 @@ JFormHelper::loadFieldClass('textarea');
  * @see         JFormRuleEmail
  * @since       11.1
  */
-class JFormFieldConftextarea extends JFormFieldTextarea
+class JFormFieldConftextarea extends JFormFieldEditor
 {
 	/**
 	 * The form field type.
@@ -29,7 +29,7 @@ class JFormFieldConftextarea extends JFormFieldTextarea
 	 * @var    string
 	 * @since  11.1
 	 */
-	protected $type = 'conftextarea';
+	public $type = 'conftextarea';
 
 	/**
 	 * Method to get the field input markup for e-mail addresses.
