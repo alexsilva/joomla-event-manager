@@ -41,9 +41,9 @@ class JFormFieldConfemail extends JFormFieldEMail
 	protected function getInput()
 	{
 		// forçando um valor de configuração padrão.
-		if (!$this->value && $this->element["default"])
+		if (!$this->value && $this->element["ddefault"])
 		{
-			$this->value = JText::_($this->element["default"]);
+			$this->value = JText::_($this->element["ddefault"]);
 		}
 		// renderizando o input.
 		return parent::getInput();
