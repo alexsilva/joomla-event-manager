@@ -49,6 +49,7 @@
 			<filename>config.xml</filename>
 			<filename>access.xml</filename>
 			<folder>views</folder>
+			<folder>fields</folder>
 			<folder>helpers</folder> 
 			<folder>scripts</folder>
 			<folder>css</folder>

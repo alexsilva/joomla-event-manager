@@ -1,20 +1,49 @@
 <?xml version="1.0" encoding="utf-8"?>
 <config>
 	<fieldset
-		name="bemvindos"
-		label="COM_OLA_CONFIG_BEMVINDO_SETTINGS_LABEL"
-		description="COM_OLA_CONFIG_BEMVINDO_SETTINGS_DESC"
+		name="email"
+		label="COM_PEBEVENTS_CONFIG_EMAIL_SETTINGS_LABEL"
+		description="COM_PEBEVENTS_CONFIG_EMAIL_SETTINGS_DESC"
+		
+		addfieldpath="/administrator/components/com_pbevents/fields"
 	>
 		<field
-			name="show_category"
-			type="radio"
-			label="COM_OLA_OLA_FIELD_SHOW_CATEGORY_LABEL"
-			description="COM_OLA_OLA_FIELD_SHOW_CATEGORY_DESC"
-			default="0"
-		>
-			<option value="0">JHIDE</option>
-			<option value="1">JSHOW</option>
-		</field>
+			name="send_notifications_to"
+			type="confemail"
+			label="COM_PBEVENTS_FIELD_EMAIL_LABEL"
+			description="COM_PBEVENTS_FIELD_EMAIL_DESC"
+			ddefault="COM_PBEVENTS_FIELD_EMAIL_DEFAULT"
+		/>
+		
+		<field
+			name="email_success_subject"
+			type="conftext"
+			label="COM_PBEVENTS_FIELD_EMAIL_SUCCESS_SUBJECT_LABEL"
+			description="COM_PBEVENTS_FIELD_EMAIL_SUCCESS_SUBJECT_DESC"
+			ddefault="COM_PBEVENTS_FIELD_EMAIL_SUCCESS_SUBJECT_DEFAULT"
+		/>
+		<field
+			name="email_success_body"
+			type="conftextarea"
+			label="COM_PBEVENTS_FIELD_EMAIL_SUCCESS_LABEL"
+			description="COM_PBEVENTS_FIELD_EMAIL_SUCCESS_DESC"
+			ddefault="COM_PBEVENTS_FIELD_EMAIL_SUCCESS_DEFAULT"
+		/>
+		
+		<field
+			name="email_failed_subject"
+			type="conftext"
+			label="COM_PBEVENTS_FIELD_EMAIL_FAILED_SUBJECT_LABEL"
+			description="COM_PBEVENTS_FIELD_EMAIL_FAILED_SUBJECT_DESC"
+			ddefault="COM_PBEVENTS_FIELD_EMAIL_FAILED_SUBJECT_DEFAULT"
+		/>
+		<field
+			name="email_failed_body"
+			type="conftextarea"
+			label="COM_PBEVENTS_FIELD_EMAIL_FAILED_LABEL"
+			description="COM_PBEVENTS_FIELD_EMAIL_FAILED_DESC"
+			ddefault="COM_PBEVENTS_FIELD_EMAIL_FAILED_DEFAULT"
+		/>
 	</fieldset>
 	<fieldset
 		name="permissions"
