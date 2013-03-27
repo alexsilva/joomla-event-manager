@@ -48,7 +48,8 @@
 		    <filename>pbevents.php</filename>
 			<filename>controller.php</filename>
 			<filename>index.html</filename>
-			<filename>configs.xml</filename>
+			<filename>config.xml</filename>
+			<filename>access.xml</filename>
 			<folder>views</folder>
 			<folder>helpers</folder> 
 			<folder>scripts</folder>
