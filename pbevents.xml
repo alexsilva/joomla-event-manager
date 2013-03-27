@@ -34,7 +34,9 @@
 	
 	<languages folder="site">
 		<language tag="en-GB">language/en-GB/en-GB.com_pbevents.ini</language>
+		<language tag="en-GB">language/en-GB/en-GB.com_pbevents.sys.ini</language>
 		<language tag="pt-BR">language/pt-BR/pt-BR.com_pbevents.ini</language>
+		<language tag="pt-BR">language/pt-BR/pt-BR.com_pbevents.sys.ini</language>
 	</languages>
 	
 	<administration>
@@ -62,7 +64,9 @@
 		
 		<languages folder="admin">
 			<language tag="en-GB">language/en-GB/en-GB.com_pbevents.ini</language>
+			<language tag="en-GB">language/en-GB/en-GB.com_pbevents.sys.ini</language>
 			<language tag="pt-BR">language/pt-BR/pt-BR.com_pbevents.ini</language>
+			<language tag="pt-BR">language/pt-BR/pt-BR.com_pbevents.sys.ini</language>
 		</languages>
 	</administration>
 	
