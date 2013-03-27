@@ -54,6 +54,19 @@
 			required="true"
 		/>
 	</fieldset>
+	
+	<fieldset
+		name="dates-hours"
+		label="Horas e datas"
+		description="Horas e datas"
+	>
+		<field
+			name="date_picker_locale"
+			type="language"
+			label="Date format"
+		/>
+	</fieldset>
+	
 	<fieldset
 		name="permissions"
 		label="JCONFIG_PERMISSIONS_LABEL"

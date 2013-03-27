@@ -11,10 +11,12 @@ JHtml::_('behavior.keepalive');
 JHtml::_('bootstrap.framework');
 
 $doc = JFactory::getDocument();
+// configuração do componente.
+$config = JComponentHelper::getParams("com_pbevents");
 
-$_name = 'Locale.'.$this->item->config->date_picker_locale.'.DatePicker.js';
-$doc->addScript(JURI::root(false).'administrator/components/com_pbevents/scripts/datepicker/'.$_name);
+$picker_locale = $config->get("date_picker_locale", "en-US");
 
+$doc->addScript(JURI::root(false).'administrator/components/com_pbevents/scripts/datepicker/'.'Locale.'.$picker_locale.'.DatePicker.js');
 $doc->addScript(JURI::root(false).'administrator/components/com_pbevents/scripts/datepicker/Picker.js');
 $doc->addScript(JURI::root(false).'administrator/components/com_pbevents/scripts/datepicker/Picker.Attach.js');
 $doc->addScript(JURI::root(false).'administrator/components/com_pbevents/scripts/datepicker/Picker.Date.js');
@@ -33,7 +35,6 @@ Joomla.submitbutton = function(task) {
 		Joomla.submitform(task, document.getElementById('adminForm'));
 	}
 }
-
 function remove_clone_hidden(_this) {
 	jQuery(_this).parent().find(":hidden").remove(); // clean hidden
 }
@@ -51,7 +52,7 @@ function clone_as_hidden(_this) {
 
 jQuery(document).ready(function() {
 	// forcando o uso do locale selecionando
-	Locale.use('<?php echo $this->item->config->date_picker_locale;?>');
+	Locale.use('<?php echo $picker_locale;?>');
 	
 	date = new DateField({
 		date: {'label': '<?php echo JText::_('COM_PBEVENTS_DATE');?>'},

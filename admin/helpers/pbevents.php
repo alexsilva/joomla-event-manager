@@ -26,9 +26,6 @@ abstract class PBEventsHelper
 		JSubMenuHelper::addEntry(JText::_('COM_PBEVENTS_ADMIN_LIST_EVENTS'), 'index.php?option=com_pbevents&task=listevents', 
 								$submenu == 'listevents');
 		
-		JSubMenuHelper::addEntry(JText::_('COM_PBEVENTS_CONFIGURATION'),'index.php?option=com_pbevents&task=editconfiguration',
-								$submenu == 'editconfiguration');
-		
 		JSubMenuHelper::addEntry(JText::_('COM_PBEVENTS_SUBMENU_CATEGORIES'), 'index.php?option=com_categories&view=categories&extension=com_pbevents', 
 								$submenu == 'categories');
 	}

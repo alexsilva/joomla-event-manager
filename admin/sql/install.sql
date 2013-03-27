@@ -1,7 +1,6 @@
 DROP TABLE IF EXISTS `#__pbevents_events`;
 DROP TABLE IF EXISTS `#__pbevents_events_dates`;
 DROP TABLE IF EXISTS `#__pbevents_rsvps`;
-DROP TABLE IF EXISTS `#__pbevents_config`;
 
 CREATE TABLE `#__pbevents_events` (
   `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT,
@@ -46,15 +45,3 @@ CREATE TABLE `#__pbevents_events_dates` (
   ON DELETE CASCADE 
   ON UPDATE NO ACTION)
 ENGINE = InnoDB;
-
-CREATE TABLE `#__pbevents_config` (
-  `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT,
-  `send_notifications_to` varchar(256),
-  `email_success_body` text,
-  `email_success_subject` text,
-  `email_failed_body` text,
-  `email_failed_subject` text,
-  `date_picker_locale` varchar(10),
-  PRIMARY KEY (`id`))
- ENGINE = InnoDB;
- 

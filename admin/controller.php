@@ -11,7 +11,6 @@ jimport('joomla.application.component.controlleradmin');
 jimport('joomla.application.input');
 jimport('joomla.html.pagination');
 
-
 class PbeventsController extends JControllerLegacy
 {	
 	/**
@@ -202,54 +201,6 @@ class PbeventsController extends JControllerLegacy
 			}
 		}
 		$this->setRedirect(JURI::root(false).'administrator/index.php?option=com_pbevents&task=viewattendees&id='.(int)$event_id);
-	}
-	
-	/**
-	 * allows user to display and edit the master configuration
-	 */
-	public function editconfiguration()
-	{
-		JToolBarHelper::title(JText::_('COM_PBEVENTS_EVENTS_MANAGER').' '.JText::_('COM_PBEVENTS_CONFIGURATION'),'generic.png');
-		JToolBarHelper::save('editconfiguration');
-		JToolBarHelper::cancel('cancel');
-		
-		$input = JFactory::getApplication()->input;
-		$input->set('hidemainmenu',true);
-		
-		$db =& JFactory::getDbo();
-		
-		if ($_SERVER['REQUEST_METHOD'] == "GET") {
-			$view = $this->getView('pbevents','html');
-			
-			$query = $db->getQuery(true);
-			
-			$query->select('*')->from('#__pbevents_config')->where('id = 1');
-			$view->config = $db->setQuery($query)->loadObject();
-			
-			$view->setLayout('config');
-			$view->display();
-		} else {
-			$input = JFactory::getApplication()->input;
-			
-			$email_success_body = $_POST['email_success_body'];
-			$email_failed_body = $_POST['email_failed_body'];
-			
-			$email_success_body = preg_replace(array('/\n+/','/\r+/'),'',$email_success_body);
-			$email_failed_body = preg_replace(array('/\n+/','/\r+/'),'',$email_failed_body);
-			
-			$config = new JObject(array(
-				'id' => $input->get('id',0,'integer'),
-				'email_failed_subject' => $input->get('email_failed_subject',null,'string'),
-				'email_failed_body' => $email_failed_body,
-				'email_success_subject' => $input->get('email_success_subject',null,'string'),
-				'email_success_body'=> $email_success_body,
-				'send_notifications_to' => $input->get('send_notifications_to',"example@example",'string'),
-				'date_picker_locale' => $input->get('date_picker_locale','en-US','string')
-			));
-			
-			$db->updateObject('#__pbevents_config', $config, 'id');
-			$this->setRedirect(JURI::root(false).'administrator/index.php?option=com_pbevents', Jtext::_('COM_PBEVENTS_CONFIG_UPDATE'));
-		}
 	}
 	
 	/**

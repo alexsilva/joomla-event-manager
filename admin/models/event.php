@@ -135,23 +135,6 @@ class PBEventsModelEvent extends JModelAdmin
 	}
 	
 	/**
-	 * Method to get the pbevents configs.
-	 *
-	 * @return      mixed   The data for the form.
-	 * @since       2.5
-	 */
-	public function getConfig() {
-		$db =& JFactory::getDbo();
-		$query = $db->getQuery(true);
-		
-		$query->select("*")->from("#__pbevents_config");
-		$query->where("id = 1"); // unique id;
-		
-		return $db->setQuery($query)->loadObject();
-		
-	}
-	
-	/**
 	 * Method to get a single record.
 	 *
 	 * @param   integer  $pk  The id of the primary key.
@@ -165,8 +148,6 @@ class PBEventsModelEvent extends JModelAdmin
 		{
 			$model = new PBEventsModelPBEvents();
 			$model->setRelated( $item ); // set related data
-			
-			$item->config = $this->getConfig(); // componente config
 		}
 		return $item;
 	}
