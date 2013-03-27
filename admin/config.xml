@@ -57,13 +57,13 @@
 	
 	<fieldset
 		name="dates-hours"
-		label="Horas e datas"
-		description="Horas e datas"
+		label="COM_PEBEVENTS_CONFIG_LOCALE_SETTINGS_LABEL"
+		description="COM_PEBEVENTS_CONFIG_LOCALE_SETTINGS_DESC"
 	>
 		<field
-			name="date_picker_locale"
-			type="language"
-			label="Date format"
+			name="date_picker_locale" type="language"
+			label="COM_PBEVENTS_FIELD_DATE_PICKER_LOCALE_LABEL"
+			description="COM_PBEVENTS_FIELD_DATE_PICKER_LOCALE_DESC"
 		/>
 	</fieldset>
 	
