@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <metadata>
-	<layout title="COM_PBEVENTS_LAYOUT_TITLE">
-		<message>COM_PBEVENTS_LAYOUT_MESSSAGE</message>
+	<layout title="COM_PBEVENTS_VIEW_LAYOUT_TITLE">
+		<message>COM_PBEVENTS_VIEW_LAYOUT_MESSSAGE</message>
 	</layout>
 	<fields name="request">
 	    <fieldset name="request">
@@ -11,8 +11,8 @@
 				extension="com_pbevents"
 				class="inputbox"
 				default=""
-				label="COM_PEBEVENTS_PEBEVENTS_FIELD_CATID_LABEL"
-				description="COM_PEBEVENTS_PEBEVENTS_FIELD_CATID_DESC"
+				label="COM_PEBEVENTS_VIEW_FIELD_CATID_LABEL"
+				description="COM_PEBEVENTS_VIEW_FIELD_CATID_DESC"
 				required="true"
 				>
 				<option value="0">JOPTION_SELECT_CATEGORY</option>
