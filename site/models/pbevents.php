@@ -11,7 +11,7 @@ class PBEventsModelPBEvents extends JModelList
 {	
 	// nome da tabela raiz de dados
 	public $_table = "#__pbevents_events";
-	public $_where = "publish = 1";
+	public $_where = "publish = 1 and catid = ";
 	
 	// lista de nomes das tableas relacionadas
 	public $_related = array(
@@ -57,9 +57,14 @@ class PBEventsModelPBEvents extends JModelList
 	//
 	protected function getListQuery() {
 		$db =& JFactory::getDbo();
+		
 		$query = $db->getQuery(true);
 		$query->select('*')->from( $this->_table );
-		$query->where( $this->_where );
+		
+		$input = JFactory::getApplication()->input;
+		$catid = $input->get("catid", 0, "integer");
+		
+		$query->where( $this->_where.(int)$catid );
 		return $query;
 	}
 	//
