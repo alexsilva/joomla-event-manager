@@ -35,7 +35,7 @@
         description="COM_PEBEVENTS_TOOLTIP_PRICE"
         size="100"
         filter="floating"
-        required="true"
+        required="false"
 	/>
 	<field
         name="panelist"
