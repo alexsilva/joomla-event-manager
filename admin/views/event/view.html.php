@@ -45,8 +45,8 @@ class PbeventsViewEvent extends JViewLegacy
     	
     	$canDo = PBEventsHelper::getActions();
     	
-    	// definindo níves de permissões.
-    	if ($canDo->get('core.create'))
+    	// agindo conforme as permiss�es.
+    	if ($canDo->get('core.edit'))
     	{
     		JToolBarHelper::apply('event.apply');
     		JToolBarHelper::save('event.save');
