@@ -8,6 +8,7 @@ CREATE TABLE `#__pbevents_events` (
   `title` varchar(256),
   `description` text,
   `catid` int(11) NOT NULL DEFAULT '0',
+  `params` TEXT NOT NULL DEFAULT '',
   `price` FLOAT(11,2) DEFAULT 0.00,
   `panelist` varchar(256) DEFAULT NULL,
   `hstart` TIME DEFAULT NULL,
