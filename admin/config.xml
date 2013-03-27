@@ -13,7 +13,9 @@
 			label="COM_PBEVENTS_FIELD_EMAIL_LABEL"
 			description="COM_PBEVENTS_FIELD_EMAIL_DESC"
 			ddefault="COM_PBEVENTS_FIELD_EMAIL_DEFAULT"
+			required="true"
 		/>
+		<field type="spacer"/>
 		
 		<field
 			name="email_success_subject"
@@ -21,6 +23,7 @@
 			label="COM_PBEVENTS_FIELD_EMAIL_SUCCESS_SUBJECT_LABEL"
 			description="COM_PBEVENTS_FIELD_EMAIL_SUCCESS_SUBJECT_DESC"
 			ddefault="COM_PBEVENTS_FIELD_EMAIL_SUCCESS_SUBJECT_DEFAULT"
+			required="true"
 		/>
 		<field
 			name="email_success_body"
@@ -29,7 +32,9 @@
 			description="COM_PBEVENTS_FIELD_EMAIL_SUCCESS_DESC"
 			ddefault="COM_PBEVENTS_FIELD_EMAIL_SUCCESS_DEFAULT"
 			filter="safehtml"
+			required="true"
 		/>
+		<field type="spacer"/>
 		
 		<field
 			name="email_failed_subject"
@@ -37,6 +42,7 @@
 			label="COM_PBEVENTS_FIELD_EMAIL_FAILED_SUBJECT_LABEL"
 			description="COM_PBEVENTS_FIELD_EMAIL_FAILED_SUBJECT_DESC"
 			ddefault="COM_PBEVENTS_FIELD_EMAIL_FAILED_SUBJECT_DEFAULT"
+			required="true"
 		/>
 		<field
 			name="email_failed_body"
@@ -45,6 +51,7 @@
 			description="COM_PBEVENTS_FIELD_EMAIL_FAILED_DESC"
 			ddefault="COM_PBEVENTS_FIELD_EMAIL_FAILED_DEFAULT"
 			filter="safehtml"
+			required="true"
 		/>
 	</fieldset>
 	<fieldset
