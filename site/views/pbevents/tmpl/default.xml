@@ -1,10 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <metadata>
-	<layout title="Standard PBEvents Layout" hidden="false">
-		<message>A Standard PBEvents Layout</message>
+	<layout title="COM_PBEVENTS_LAYOUT_TITLE">
+		<message>COM_PBEVENTS_LAYOUT_MESSSAGE</message>
 	</layout>
-	<state>
-		<name>PBEvents Layout</name>
-		<description>A Standard PBEvents Layout.</description>
-	</state>
+	<fields name="request">
+	    <fieldset name="request">
+		    <field
+				name="catid"
+				type="category"
+				extension="com_pbevents"
+				class="inputbox"
+				default=""
+				label="COM_PEBEVENTS_PEBEVENTS_FIELD_CATID_LABEL"
+				description="COM_PEBEVENTS_PEBEVENTS_FIELD_CATID_DESC"
+				required="true"
+				>
+				<option value="0">JOPTION_SELECT_CATEGORY</option>
+			</field>
+		</fieldset>
+	</fields>
 </metadata>
+
