@@ -21,7 +21,11 @@ class PbEventsViewPBevents extends JViewLegacy
     	
     	// forca um limite para a paginacao.
     	$input = JFactory::getApplication()->input;
-    	$input->set("limit", $input->get("limit",6,"integer"));
+    	// component configs
+    	$params =& JComponentHelper::getParams("com_pbevents");
+    	$list_limit = $params->get("slist_limit", 6);
+    	
+    	$input->set("limit", $input->get("limit",$list_limit,"integer"));
     	
     	// events list
     	$this->events = $this->get("Items");

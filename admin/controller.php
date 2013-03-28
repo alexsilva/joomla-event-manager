@@ -63,7 +63,7 @@ class PbeventsController extends JControllerLegacy
 		
 		$canDo = PBEventsHelper::getActions();
 		
-		// agindo conforme as permissões
+		// agindo conforme as permissÃµes
 		if ($canDo->get('core.create'))
 		{
 			JToolBarHelper::addNew('event.add');
@@ -82,9 +82,13 @@ class PbeventsController extends JControllerLegacy
 		// get attendees for events and set date to the right timezone!
 		$config =& JFactory::getConfig();
 		
+		// component configs
+		$params =& JComponentHelper::getParams("com_pbevents");
+		$list_limit = $params->get("alist_limit", 6);
+		
 		//get offset if needed
 		$input =& JFactory::getApplication()->input;
-		$limit = $input->get('limit',6,'integer');
+		$limit = $input->get('limit',$list_limit,'integer');
 		$limitstart = $input->get('limitstart',0,'integer');
 		$filter_published = $input->get('filter_published',null,'string');
 		

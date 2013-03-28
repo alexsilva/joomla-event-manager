@@ -68,6 +68,47 @@
 	</fieldset>
 	
 	<fieldset
+		name="admin-site"
+		label="COM_PEBEVENTS_CONFIG_ADMIN_SITE_SETTINGS_LABEL"
+		description="COM_PEBEVENTS_CONFIG_ADMIN_SITE_SETTINGS_DESC"
+	>
+		<field
+			name="alist_limit" type="list"
+			label="COM_PBEVENTS_FIELD_ADMIN_LIST_LIMIT_LABEL"
+			description="COM_PBEVENTS_FIELD_ADMIN_LIST_LIMIT_DESC"
+			default="6"
+		>
+			<option value="5">5</option>
+			<option value="6">6</option>
+			<option value="10">10</option>
+			<option value="15">15</option>
+			<option value="20">20</option>
+			<option value="30">30</option>
+			<option value="35">35</option>
+			<option value="40">40</option>
+			<option value="45">45</option>
+			<option value="50">50</option>
+		</field>
+		<field
+			name="slist_limit" type="list"
+			label="COM_PBEVENTS_FIELD_SITE_LIST_LIMIT_LABEL"
+			description="COM_PBEVENTS_FIELD_SITE_LIST_LIMIT_DESC"
+			default="6"
+		>
+			<option value="5">5</option>
+			<option value="6">6</option>
+			<option value="10">10</option>
+			<option value="15">15</option>
+			<option value="20">20</option>
+			<option value="30">30</option>
+			<option value="35">35</option>
+			<option value="40">40</option>
+			<option value="45">45</option>
+			<option value="50">50</option>
+		</field>
+	</fieldset>
+	
+	<fieldset
 		name="permissions"
 		label="JCONFIG_PERMISSIONS_LABEL"
 		description="JCONFIG_PERMISSIONS_DESC"
