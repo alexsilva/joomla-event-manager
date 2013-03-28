@@ -41,3 +41,11 @@ div#event-people-number {
 div#event-people-number > p{
 	margin: 0;
 }
+
+#event-deleted-info {
+	padding: 10px;
+	border: dashed 1px gray;
+	color: red;
+	text-align: center;
+	
+}
