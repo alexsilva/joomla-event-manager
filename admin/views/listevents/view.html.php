@@ -40,7 +40,20 @@ class PBEventsViewListEvents extends JViewLegacy
 		
 		parent::display($tpl);
 	}
-	
+	/*
+	 * format all dates
+	 */
+	public static function makeDateOptions(array &$items)
+	{
+		$_items = array();
+		foreach ($items as $item)
+		{
+			$_items[] = PBEventsHelper::formatDateHours($item->date,
+						array($item->hstart, $item->hend), 
+						$item->henable);
+		}
+		return $_items;
+	}
 	private function addToolbar() {
 		$canDo = PBEventsHelper::getActions();
 		

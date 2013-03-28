@@ -14,17 +14,6 @@ JHtml::_('behavior.tooltip');
 JHtml::_('behavior.multiselect');
 JHtml::_('formbehavior.chosen', 'select');
 JHtml::_('dropdown.init');
-
-function makeDateOptions(array &$dates)
-{
-	$_dates = array();
-	foreach ($dates as $date){
-		$_dates[] = PBEventsHelper::formatDateHours($date->date, 
-						array($date->hstart, $date->hend), 
-						$date->henable);
-	}
-	return $_dates;
-}
 ?>
 
 <form action="<?php echo JRoute::_('index.php?option=com_pbevents&task=listevents');?>" method="post" name="adminForm" id="adminForm">  
@@ -107,7 +96,7 @@ function makeDateOptions(array &$dates)
 				
 				<td class="center">
 					<select name="events_dates_choices" class="inputbox">
-						<?php echo JHtml::_('select.options', makeDateOptions($event->dates), 'value', 'text', $this->filter_published, true);?>
+						<?php echo JHtml::_('select.options', $this->makeDateOptions($event->dates), 'value', 'text', $this->state->get('filter.published'), true);?>
 					</select>
 				</td>
 				
