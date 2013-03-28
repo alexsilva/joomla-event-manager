@@ -76,7 +76,7 @@ class PBEventsModelPBEvents extends JModelList
 		$query->where("id = ".(int)$object_id);
 		$item = $db->setQuery($query)->loadObject();
 		
-		$this->setRelated( $item );
+		if ($item) $this->setRelated( $item );
 		return $item;
 	}
 }
