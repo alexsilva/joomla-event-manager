@@ -75,15 +75,18 @@ class Inscription
 	{
 		$input = JFactory::getApplication()->input;
 		
-		if ($status == 'success')
+		$translator = JFactory::getLanguage();
+		$translator->load('com_pbevents', JPATH_ADMINISTRATOR);
+		
+		if ($status == "success")
 		{
-			$email_body = $this->config->get("email_success_body", "");
-			$email_subject = $this->config->get("email_success_subject", "");
+			$email_subject = $this->config->get("email_success_subject", $translator->_("COM_PBEVENTS_FIELD_EMAIL_SUCCESS_SUBJECT_DEFAULT"));
+			$email_body = $this->config->get("email_success_body", $translator->_("COM_PBEVENTS_FIELD_EMAIL_SUCCESS_DEFAULT"));
 		}
 		else
 		{
-			$email_subject = $this->config->get("email_failed_subject", "");
-			$email_body = $this->config->get("email_failed_body", "");
+			$email_subject = $this->config->get("email_failed_subject", $translator->_("COM_PBEVENTS_FIELD_EMAIL_FAILED_SUBJECT_DEFAULT"));
+			$email_body = $this->config->get("email_failed_body",  $translator->_("COM_PBEVENTS_FIELD_EMAIL_FAILED_DEFAULT"));
 		}
 		
 		// dates detail
@@ -112,7 +115,7 @@ class Inscription
 		
 		$mailer =& JFactory::getMailer();
 		
-		$mailer->addRecipient($this->config->get("send_notifications_to", ""));
+		$mailer->addRecipient($this->config->get("send_notifications_to", $translator->_("COM_PBEVENTS_FIELD_EMAIL_DEFAULT")));
 		
 		$mailer->setSubject($email_subject);
 		$mailer->isHTML(true);
