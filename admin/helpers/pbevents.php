@@ -27,7 +27,7 @@ abstract class PBEventsHelper
 		);
 		JHtmlSidebar::addEntry(
 			JText::_('COM_PBEVENTS_ADMIN_LIST_EVENTS'), 
-			'index.php?option=com_pbevents&task=listevents', 
+			'index.php?option=com_pbevents&view=listevents', 
 			$submenu == 'listevents'
 		);
 		JHtmlSidebar::addEntry(
