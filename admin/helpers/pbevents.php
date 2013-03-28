@@ -20,14 +20,21 @@ abstract class PBEventsHelper
 	 */
 	public static function addSubmenu($submenu)
 	{	
-		JSubMenuHelper::addEntry(JText::_('COM_PBEVENTS_DASHBOARD'), 'index.php?option=com_pbevents',
-								$submenu=='display');
-		
-		JSubMenuHelper::addEntry(JText::_('COM_PBEVENTS_ADMIN_LIST_EVENTS'), 'index.php?option=com_pbevents&task=listevents', 
-								$submenu == 'listevents');
-		
-		JSubMenuHelper::addEntry(JText::_('COM_PBEVENTS_SUBMENU_CATEGORIES'), 'index.php?option=com_categories&view=categories&extension=com_pbevents', 
-								$submenu == 'categories');
+		JHtmlSidebar::addEntry(
+			JText::_('COM_PBEVENTS_DASHBOARD'), 
+			'index.php?option=com_pbevents',
+			$submenu=='display'
+		);
+		JHtmlSidebar::addEntry(
+			JText::_('COM_PBEVENTS_ADMIN_LIST_EVENTS'), 
+			'index.php?option=com_pbevents&task=listevents', 
+			$submenu == 'listevents'
+		);
+		JHtmlSidebar::addEntry(
+			JText::_('COM_PBEVENTS_SUBMENU_CATEGORIES'), 
+			'index.php?option=com_categories&view=categories&extension=com_pbevents', 
+			$submenu == 'categories'
+		);
 	}
 	
 	/**
