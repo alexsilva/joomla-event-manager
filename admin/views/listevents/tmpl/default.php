@@ -17,56 +17,47 @@ JHtml::_('dropdown.init');
 ?>
 
 <form action="<?php echo JRoute::_('index.php?option=com_pbevents&task=listevents');?>" method="post" name="adminForm" id="adminForm">  
-<?php if (!empty( $this->sidebar)) : ?>
-	<div id="j-sidebar-container" class="span2">
-		<?php echo $this->sidebar; ?>
-	</div>
-	<div id="j-main-container" class="span10">
-<?php else : ?>
-	<div id="j-main-container">
-<?php endif;?>
+	<?php if (!empty( $this->sidebar)): ?>
+		<div id="j-sidebar-container" class="span2">
+			<?php echo $this->sidebar; ?>
+		</div>
+		<div id="j-main-container" class="span10"></div>
+	<?php else: ?>
+		<div id="j-main-container"></div>
+	<?php endif;?>
+	
 	<div class="clearfix"> </div>
+	
 	<table class="table table-striped" id="articleList">
 		<thead>
 			<tr>
 				<th>
 					<input type="checkbox" name="checkall-toggle" value="" title="<?php echo JText::_('JGLOBAL_CHECK_ALL'); ?>" onclick="Joomla.checkAll(this)" />
 				</th>
-				<th>
-					ID
-				</th>
-				<th>
-					<?php echo JText::_('COM_PBEVENTS_EVENT_NAME');?>
-				</th>
-				<th>
-					<?php echo JText::_('COM_PBEVENTS_EVENT_DESCRIPTION');?>
-				</th>
-				<th>
-					<?php echo JText::_('COM_PEBEVENTS_PANELIST');?> 
-				</th>
-				<th>
-					<?php echo JText::_('COM_PEBEVENTS_EVENTS_DATES');?>
-				</th>
-				<th>
-					<?php echo JText::_('COM_PEBEVENTS_EVENTS_START_HOUR');?>
-				</th>
-				<th>
-					<?php echo JText::_('COM_PEBEVENTS_EVENTS_END_HOUR');?>
-				</th>
-				<th>
-					<?php echo JText::_('COM_PEBEVENTS_EVENTS_PRICE');?>
-				</th>
-				<th>
-					<?php echo JText::_('COM_PBEVENTS_ATTENDEES');?>
-				</th>
-				<th><?php echo JText::_('COM_PBEVENTS_EVENT_ARCHIVED');?></th>
+				<th>ID</th>
+				
+				<th><?php echo JText::_('COM_PBEVENTS_EVENT_NAME') ?></th>
+				
+				<th><?php echo JText::_('COM_PBEVENTS_EVENT_DESCRIPTION') ?></th>
+				
+				<th><?php echo JText::_('COM_PEBEVENTS_PANELIST') ?></th>
+				
+				<th><?php echo JText::_('COM_PEBEVENTS_EVENTS_DATES') ?></th>
+				
+				<th><?php echo JText::_('COM_PEBEVENTS_EVENTS_START_HOUR') ?></th>
+				
+				<th><?php echo JText::_('COM_PEBEVENTS_EVENTS_END_HOUR') ?></th>
+				
+				<th><?php echo JText::_('COM_PEBEVENTS_EVENTS_PRICE') ?></th>
+				
+				<th><?php echo JText::_('COM_PBEVENTS_ATTENDEES') ?></th>
+				
+				<th><?php echo JText::_('COM_PBEVENTS_EVENT_ARCHIVED')?></th>
 			</tr>
 		</thead>
 		<tfoot>
 			<tr>
-				<td colspan="10">
-					<?php echo $this->pagination->getListFooter(); ?>
-				</td>
+				<td colspan="10"><?php echo $this->pagination->getListFooter() ?></td>
 			</tr>
 		</tfoot>
 		<tbody>
