@@ -104,7 +104,7 @@ JHtml::_('dropdown.init');
 				</td>
 				
 				<td class="center">
-					<a href="<?php echo JURI::root(false);?>administrator/index.php?option=com_pbevents&task=viewattendees&id=<?php echo $event->id;?>"><?php echo count($event->attendees);?></a>
+					<a href="<?php echo JRoute::_("index.php?option=com_pbevents&view=listattendees&id=".$event->id) ?>" > <?php echo count($event->attendees);?></a>
 				</td>
 				
 				<td class="center"><?php echo JHtml::_('jgrid.published', $event->publish, $i); ?></td>
