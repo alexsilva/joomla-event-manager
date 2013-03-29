@@ -27,7 +27,7 @@ class PBEventsViewListAttendees extends JViewLegacy
 		$input->set("limit", $input->get("limit", $limit_list));
 		
 		$this->pagination = $this->get("Pagination");
-		$this->item = $this->get("Items");
+		$this->attendees = $this->get("Items");
 		
 		// id da seção
 		$this->event_id = $input->get("id",0,"integer");
@@ -44,7 +44,7 @@ class PBEventsViewListAttendees extends JViewLegacy
 		// definindo níves de permissões.
 		if ($canDo->get('core.delete'))
 		{
-			JToolBarHelper::deleteList('','deleteattendee');
+			JToolBarHelper::deleteList(JText::_("COM_PBEVENTS_VIEW_DELETE_ATTENDEES_WARNING"), 'attendees.delete');
 		}
 	}
 }
