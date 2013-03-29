@@ -19,6 +19,12 @@ defined('_JEXEC') or die;
 class PBEventsViewListAttendees extends JViewLegacy 
 {
 	public function display($tpl = null) {
+		$input =& JFactory::getApplication()->input;
+		
+		$this->pagination = $this->get("Pagination");
+		$this->item = $this->get("Items");
+		
+		$this->event_id = $input->get("id",0,"integer");
 		
 		parent::display($tpl);
 	}
