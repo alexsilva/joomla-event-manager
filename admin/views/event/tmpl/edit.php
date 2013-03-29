@@ -9,9 +9,11 @@ JHtml::_('behavior.tooltip');
 JHtml::_('behavior.formvalidation');
 JHtml::_('behavior.keepalive');
 JHtml::_('bootstrap.framework');
+JHtml::_('behavior.multiselect');
+JHtml::_('formbehavior.chosen', 'select');
 
 $doc = JFactory::getDocument();
-// configuração do componente.
+// configuraÃ§Ã£o do componente.
 $config = JComponentHelper::getParams("com_pbevents");
 
 $picker_locale = $config->get("date_picker_locale", "en-US");
