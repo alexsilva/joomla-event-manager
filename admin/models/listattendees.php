@@ -11,7 +11,7 @@ class PBEventsModelListAttendees extends JModelList
 	 */
 	protected function getListQuery() {
 		$db =& JFactory::getDbo();
-		
+				
 		$query = $db->getQuery(true);
 		$query->select('*')->from('#__pbevents_rsvps');
 		
@@ -20,6 +20,19 @@ class PBEventsModelListAttendees extends JModelList
 		
 		$query->where('event_id = '.$db->escape($event_id));
 		return $query;
+	}
+	public function getEvent() {
+		$db =& JFactory::getDbo();
+		$query = $db->getQuery(true);
+		
+		$query->select('#__pbevents_events.title');
+		$query->from('#__pbevents_events');
+		
+		$input =& JFactory::getApplication()->input;
+		$event_id = $input->get("id", 0, 'integer');
+		
+		$query->where('id = '.$db->escape($event_id));
+		return $db->setQuery($query)->loadObject();
 	}
 	
 }
