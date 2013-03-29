@@ -30,13 +30,6 @@ $doc->addScript(JURI::root(false).'administrator/components/com_pbevents/scripts
 $doc->addStyleSheet(JURI::root(false).'administrator/components/com_pbevents/css/com_pbevents_adminstrator.edit.form.css');
 ?>
 <script type="text/javascript">
-// chamando o validador de joomla
-Joomla.submitbutton = function(task) {
-	if (task == 'event.cancel' || document.formvalidator.isValid(document.id('adminForm')))
-	{
-		Joomla.submitform(task, document.getElementById('adminForm'));
-	}
-};
 jQuery(document).ready(function() {
 	// forcando o uso do locale selecionando
 	Locale.use('<?php echo $picker_locale;?>');
@@ -55,9 +48,6 @@ jQuery(document).ready(function() {
 		hourformat: '<?php echo JText::_('COM_PBEVENTS_HOUR_PICKER_FORMAT');?>',
 		conteiner: jQuery(".group-date"), sep: "-"
 	});
-	
-	// on event click
-	jQuery(".btn-add-control").click( date.createObject );
 	
 	// adicionando as horas iniciais/finais
 	var hstart = jQuery("#jform_hstart");
@@ -85,6 +75,22 @@ jQuery(document).ready(function() {
 		echo implode("", $pieces)."\r\n";
 	}
 };?>
+
+//chamando o validador de joomla
+Joomla.submitbutton = function(task) {
+	if (task == "create.date.field")
+	{
+		// usando a toobar para adicionar funcionalidade a edicao.
+		date.createObject(null); 
+	}
+	else
+	{
+		if (task == 'event.cancel' || document.formvalidator.isValid(document.id('adminForm')))
+		{
+			Joomla.submitform(task, document.getElementById('adminForm'));
+		};
+	};
+};
 });
 </script>
 
@@ -137,14 +143,6 @@ jQuery(document).ready(function() {
 		
 		<fieldset class="adminform date-field">
 			<legend><?php echo JText::_('COM_PEBEVENTS_EVENTS_DATES');?></legend>
-			
-			<div class="control-group">
-				<div class="control-label btn-add-control">
-					<img src="<?php echo JURI::root(false); ?>administrator/components/com_pbevents/images/add.png"/>
-					<span><?php echo JText::_('COM_PEBEVENTS_NEW_DATA_ENTRY'); ?></span>
-				</div>
-			</div>
-			<hr>
 			<div class="group-date"></div>
 		</fieldset>
 		

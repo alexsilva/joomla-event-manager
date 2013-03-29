@@ -45,7 +45,7 @@ class PbeventsViewEvent extends JViewLegacy
     	
     	$canDo = PBEventsHelper::getActions();
     	
-    	// agindo conforme as permissões.
+    	// agindo conforme as permissï¿½es.
     	if ($canDo->get('core.edit'))
     	{
     		JToolBarHelper::apply('event.apply');
@@ -53,6 +53,9 @@ class PbeventsViewEvent extends JViewLegacy
     		
     	}
     	JToolBarHelper::cancel('event.cancel');
+    	JToolBarHelper::spacer("10px");
+    	
+    	JToolBarHelper::custom("create.date.field", "new", "Adicionar nova data", "Nova Data", false);
     }
 }
 
