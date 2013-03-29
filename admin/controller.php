@@ -46,8 +46,8 @@ class PbeventsController extends JControllerLegacy
 	 */
 	public function publish()
 	{
-		echo print_r($_REQUEST);
 		$db = &JFactory::getDbo();
+		
 		$input = &JFactory::getApplication()->input;
 		$cids = $input->get('cid',null,'array');
 		
