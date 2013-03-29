@@ -9,7 +9,7 @@
 	margin-top: 25px;
 }
 
-p#alert-user-registred, #alert-no-article {
+p#alert-user-registred {
 	color: red;
 }
 
@@ -42,7 +42,7 @@ div#event-people-number > p{
 	margin: 0;
 }
 
-#event-deleted-info {
+#event-deleted-info, #alert-no-article {
 	padding: 10px;
 	border: dashed 1px gray;
 	color: red;
