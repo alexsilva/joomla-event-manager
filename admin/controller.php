@@ -19,39 +19,26 @@ class PbeventsController extends JControllerLegacy
 	 * @access    public
 	 */
 	function display($cachable = false, $urlparams = array())
-	{
-		JToolBarHelper::title(JText::_('COM_PBEVENTS_HEADING'), 'generic.png');
-		
-		$app =& JFactory::getApplication();
+	{		
 		$plugin = JPluginHelper::getPlugin('user', 'profile10');
-		
+		 
 		// has the plugin been activated?
-		if (count($plugin) == 0) {
-			$app->enqueueMessage(JText::_('COM_PEBEVENTS_PROFILE_NOT_ENABLE'), 'error');
-		}
-		
-		$input = $app->input;
-		$_view = "pbevents";
-		
-		if ($input->get("view", $_view) == $_view)
+		if (count($plugin) == 0)
 		{
-			$view = $this->getView($_view, "html");
-			
-			if ($model = $this->getModel("pbevents"))
-			{
-				$view->setModel($model, true);
-			}
-			$view->event = $model->getLastEntries();
-			$view->upcoming = $model->getDateUpComing(); //UPCOMING
-			
-			$view->display();
-		} 
-		else
-		{	
-			return parent::display($cachable, $urlparams);
+			JFactory::getApplication()->enqueueMessage(JText::_('COM_PEBEVENTS_PROFILE_NOT_ENABLE'), 'error');
 		}
+		return parent::display($cachable, $urlparams);
 	}
-
+	
+	public function edit() {
+		$input =& JFactory::getApplication()->input;
+		
+		$input->set("view", "event");
+		$input->set("layout", "edit");
+		
+		return parent::display();
+	}
+	
 	/**
 	 * Method to list all the events in the database
 	 * @todo implement proper filtering and pagination on listed events

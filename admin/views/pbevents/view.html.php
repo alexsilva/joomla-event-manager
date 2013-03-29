@@ -14,6 +14,11 @@ class PbeventsViewPbevents extends JViewLegacy
 {
     function display($tpl = null)
     {	
-		return parent::display($tpl);
+    	JToolBarHelper::title(JText::_('COM_PBEVENTS_HEADING'), 'generic.png');
+    	
+    	$this->event = $this->get("LastEntries");
+    	$this->upcoming = $this->get("DateUpComing"); //UPCOMING
+    	
+    	return parent::display($tpl);
     }
 }

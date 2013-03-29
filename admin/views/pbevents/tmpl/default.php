@@ -57,7 +57,7 @@ echo '<h1>'.JTEXT::_('COM_PBEVENTS_HEADING').'</h1>';
 					<?php foreach ($this->upcoming as $object): ?>
 					<div class="row-fluid">
 						<div class="span9">
-							<a href="<?php echo JRoute::_('index.php?option=com_pbevents&task=event.edit&id='.(int)$object->event_id)?>">
+							<a href="<?php echo JRoute::_('index.php?option=com_pbevents&task=edit&id='.(int)$object->event_id)?>">
 								<strong class="row-title"><?php echo $object->title ?> </strong>
 							</a>
 						</div>

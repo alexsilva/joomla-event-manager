@@ -72,7 +72,7 @@ JHtml::_('dropdown.init');
 				</td>
 				
 				<td class="center">
-					<a href="<?php echo JURI::root(false);?>administrator/index.php?option=com_pbevents&task=event.edit&id=<?php echo $event->id;?>">
+					<a href="<?php echo JURI::root(false);?>administrator/index.php?option=com_pbevents&task=edit&id=<?php echo $event->id;?>">
 						<?php echo $event->title;?>
 					</a>
 				</td>
