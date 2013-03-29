@@ -3,10 +3,6 @@
 <form>
   <fieldset name="event">
 	<field
-        name="id"
-        type="hidden"
-	/>
-	<field
         name="title"
         id="title"
         type="text"
