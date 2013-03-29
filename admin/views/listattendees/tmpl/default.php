@@ -13,7 +13,13 @@ JHtml::addIncludePath(JPATH_COMPONENT.'/helpers/html');
 JHtml::_('behavior.tooltip');
 JHtml::_('behavior.multiselect');
 ?>
-
+<div style="text-align: center;">
+<?php if ($this->event): ?>
+	<h3><?php echo $this->event->title ?></h3>	
+<?php else: ?>
+	<h3><?php echo JText::_('COM_PBEVENT_INVALID_EVENT') ?></h3>
+<?php endif ?>
+</div>
 <form action="<?php echo JRoute::_('index.php?option=com_pbevents&task=viewattendees');?>" method="post" name="adminForm" id="adminForm">  
 	<table class="adminlist table table-striped">
 		<thead>
@@ -22,15 +28,16 @@ JHtml::_('behavior.multiselect');
 				<th>	
 					<input type="checkbox" name="checkall-toggle" value="" title="<?php echo JText::_('JGLOBAL_CHECK_ALL'); ?>" onclick="Joomla.checkAll(this)" />
 				</th>
+				
 				<th>ID</th>
+				
 				<th><?php echo JText::_("Email") ?></th>
+				
 				<th><?php echo JText::_("User") ?></th>
 			</tr>
 		</thead>
 		<tfoot>
-			<tr>
-				<td colspan="5"><?php echo $this->pagination->getListFooter() ?></td>
-			</tr>
+			<tr><td colspan="5"><?php echo $this->pagination->getListFooter() ?></td></tr>
 		</tfoot>
 		<tbody>
 			<?php if (isset($this->attendees) && count($this->attendees) > 0): ?>
@@ -48,12 +55,13 @@ JHtml::_('behavior.multiselect');
 				<?php endforeach;?>
 			<?php else :?>
 				<tr>
-					<td colspan="5" align="center"><?php echo JText::_('COM_PBEVENTS_NO_ATTENDEES');?></td>
+					<td colspan="5" style="text-align:center;">
+						<?php echo JText::_('COM_PBEVENTS_NO_ATTENDEES');?>
+					</td>
 				</tr>
 			<?php endif;?>
 		</tbody>
 	</table>
-	<input type="hidden" name="task" value="listattendees" />
 	<input type="hidden" name="boxchecked" value="0" />
 	<input type="hidden" name="id" value="<?php echo $this->event_id ?>"/>
 	<?php echo JHtml::_('form.token') ?>

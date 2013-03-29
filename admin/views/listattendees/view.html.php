@@ -28,6 +28,7 @@ class PBEventsViewListAttendees extends JViewLegacy
 		
 		$this->pagination = $this->get("Pagination");
 		$this->attendees = $this->get("Items");
+		$this->event = $this->get("Event");
 		
 		// id da seção
 		$this->event_id = $input->get("id",0,"integer");
