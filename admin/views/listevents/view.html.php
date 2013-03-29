@@ -76,12 +76,14 @@ class PBEventsViewListEvents extends JViewLegacy
 		JHtmlSidebar::addFilter(
 			JText::_('JOPTION_SELECT_PUBLISHED'),
 			'filter_published',
-			JHtml::_('select.options', JHtml::_('jgrid.publishedOptions'), 'value', 'text', $this->state->get('filter.published'), true)
+			JHtml::_('select.options', 
+			JHtml::_('jgrid.publishedOptions'), 'value', 'text', $this->state->get('filter.published'), true)
 		);
 		JHtmlSidebar::addFilter(
 			JText::_('JOPTION_SELECT_CATEGORY'),
 			'filter_category_id',
-			JHtml::_('select.options', JHtml::_('category.options', 'com_pbevents'), 'value', 'text', $this->state->get('category.id'))
+			JHtml::_('select.options', 
+			JHtml::_('category.options', 'com_pbevents'), 'value', 'text', $this->state->get('filter.category_id'))
 		);
 		
 	}
