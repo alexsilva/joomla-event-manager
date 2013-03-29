@@ -14,6 +14,15 @@ $config = JFactory::getConfig();
 echo '<h1>'.JTEXT::_('COM_PBEVENTS_HEADING').'</h1>';
 
 ?>
+<?php if (!empty( $this->sidebar)): ?>
+	<div id="j-sidebar-container" class="span2">
+		<?php echo $this->sidebar; ?>
+	</div>
+	<div id="j-main-container" class="span10">
+<?php else: ?>
+	<div id="j-main-container">
+<?php endif;?>
+
 <div class="container-fluid">
 <!-- Begin Content -->
 <div class="row-fluid">

@@ -19,6 +19,8 @@ class PbeventsViewPbevents extends JViewLegacy
     	$this->event = $this->get("LastEntries");
     	$this->upcoming = $this->get("DateUpComing"); //UPCOMING
     	
+    	$this->sidebar = JHtmlSidebar::render();
+    	
     	return parent::display($tpl);
     }
 }
