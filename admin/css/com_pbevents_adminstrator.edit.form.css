@@ -3,6 +3,12 @@
 .date-field {
 	margin-bottom: 125px;
 }
+.control-group {
+	padding-left: 25px;	
+}
+.controls {
+	padding-left: 15px;	
+}
 
 .controls > textarea {
 	height: 100px;
