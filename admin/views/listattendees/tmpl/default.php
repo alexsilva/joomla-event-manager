@@ -22,7 +22,7 @@ JHtml::_('behavior.multiselect');
 	<?php endif ?>
 </div>
 
-<form action="<?php echo JRoute::_('index.php?option=com_pbevents');?>" method="post" name="adminForm" id="adminForm">  
+<form action="<?php echo JRoute::_('index.php?option=com_pbevents&view=listattenees') ?>" method="post" name="adminForm" id="adminForm">  
 
 	<table class="adminlist table table-striped">
 		<thead>
