@@ -30,15 +30,6 @@ class PbeventsController extends JControllerLegacy
 		return parent::display($cachable, $urlparams);
 	}
 	
-	public function edit() {
-		$input =& JFactory::getApplication()->input;
-		
-		$input->set("view", "event");
-		$input->set("layout", "edit");
-		
-		return parent::display();
-	}
-	
 	/**
 	 * Method to list all the events in the database
 	 * @todo implement proper filtering and pagination on listed events

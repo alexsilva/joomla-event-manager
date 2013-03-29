@@ -14,8 +14,8 @@ class PBEventsControllerEvents extends JControllerAdmin
 {
 	public function __construct($config = array())
 	{
-		$this->view_list = 'default&task=listevents';
-	
+		$this->view_list = '&task=listevents';
+		
 		parent::__construct($config);
 	}
 	

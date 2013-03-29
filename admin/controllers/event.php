@@ -13,7 +13,7 @@ class PBEventsControllerEvent extends JControllerForm
 	public function __construct($config = array())
 	{
 		// set redirect
-		$this->view_list = 'default&task=listevents';
+		$this->view_list = '&task=listevents';
 		
 		parent::__construct($config);
 	}
