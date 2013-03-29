@@ -15,7 +15,7 @@ function DateField(params) {
 	
 	this.rootID = "date-complete-option";
 	this.checkbox = "henable";
-	self.extra = {} // extra date
+	self.extra = {}; // extra date
 	this.pk = null;
 	
 	this.setupPicker = function(date, hour) {
@@ -36,7 +36,7 @@ function DateField(params) {
 				format: self.params.hourformat
 			});
 		}
-	}
+	};
 	this.makeHtml = function() {
 		html = new Array(
 			'<div class="{0}" id="{1}" >'.format(this.rootID, this.rootID),
@@ -79,11 +79,11 @@ function DateField(params) {
 				'<hr>',
 			'</div>');
 		return html.join("");
-	}
+	};
 	this.getRoot = function(pk) {
 		// raiz do objeto de data
 		return jQuery("#"+self.rootID+self.params.sep+pk);
-	}
+	};
 	this.onDateCheck = function(event) {
 		// atencao que 'this' vem de fora.
 		_this = jQuery(this);
@@ -95,7 +95,7 @@ function DateField(params) {
 		hstart.prop('disabled',!hstart.prop('disabled'));
 		hend.prop('disabled',!hend.prop('disabled'));
 		_this.attr("value", _this.is(':checked') ? 1:0);
-	}
+	};
 	this.removeObject = function(event) {
 		var _this = jQuery(this);
 		var root = self.getRoot(_this.attr("pk"));
