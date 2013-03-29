@@ -13,14 +13,17 @@ JHtml::addIncludePath(JPATH_COMPONENT.'/helpers/html');
 JHtml::_('behavior.tooltip');
 JHtml::_('behavior.multiselect');
 ?>
+
 <div style="text-align: center;">
-<?php if ($this->event): ?>
-	<h3><?php echo $this->event->title ?></h3>	
-<?php else: ?>
-	<h3><?php echo JText::_('COM_PBEVENT_INVALID_EVENT') ?></h3>
-<?php endif ?>
+	<?php if ($this->event): ?>
+		<h3><?php echo $this->event->title ?></h3>	
+	<?php else: ?>
+		<h3><?php echo JText::_('COM_PBEVENT_INVALID_EVENT') ?></h3>
+	<?php endif ?>
 </div>
-<form action="<?php echo JRoute::_('index.php?option=com_pbevents&task=viewattendees');?>" method="post" name="adminForm" id="adminForm">  
+
+<form action="<?php echo JRoute::_('index.php?option=com_pbevents');?>" method="post" name="adminForm" id="adminForm">  
+
 	<table class="adminlist table table-striped">
 		<thead>
 			<tr>
@@ -62,6 +65,7 @@ JHtml::_('behavior.multiselect');
 			<?php endif;?>
 		</tbody>
 	</table>
+	<input type="hidden" name="task" value="" />
 	<input type="hidden" name="boxchecked" value="0" />
 	<input type="hidden" name="id" value="<?php echo $this->event_id ?>"/>
 	<?php echo JHtml::_('form.token') ?>

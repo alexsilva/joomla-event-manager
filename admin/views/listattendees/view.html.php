@@ -40,11 +40,17 @@ class PBEventsViewListAttendees extends JViewLegacy
 	private function addToolbar() {
 		JToolBarHelper::title(JText::_('COM_PBEVENTS_EVENTS_MANAGER').' '.JText::_('COM_PBEVENTS_ATTENDEES'),'generic.png');
 		
+		JToolBarHelper::back(JText::_("COM_PBEVENTS_VIEW_GO_TO_LIST_EVENTS"), JRoute::_("index.php?option=com_pbevents&task=listevents"));
+		
+		JToolBarHelper::divider();
+		JToolBarHelper::cancel("listevents");
+		
 		$canDo = PBEventsHelper::getActions();
 		
 		// definindo níves de permissões.
 		if ($canDo->get('core.delete'))
 		{
+			JToolBarHelper::divider();
 			JToolBarHelper::deleteList(JText::_("COM_PBEVENTS_VIEW_DELETE_ATTENDEES_WARNING"), 'attendees.delete');
 		}
 	}
