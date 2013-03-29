@@ -109,6 +109,14 @@
 		<option
 			value="1">JYES</option>
 	</field>
+	<field
+		id="id"
+		name="id"
+		type="hidden"
+		class="inputbox"
+		size="10"
+		default="0"
+		readonly="true" />
 </fieldset>
 
 <fieldset name="event-dates" >
