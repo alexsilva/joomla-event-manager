@@ -10,10 +10,14 @@
 defined('_JEXEC') or die('Restricted access');
 
 JHtml::addIncludePath(JPATH_COMPONENT.'/helpers/html');
+
 JHtml::_('behavior.tooltip');
 JHtml::_('behavior.multiselect');
 JHtml::_('formbehavior.chosen', 'select');
 JHtml::_('dropdown.init');
+
+$doc = JFactory::getDocument();
+$doc->addStyleSheet(JUri::root(false)."administrator/components/com_pbevents/css/com_pbevents_adminstrator.listevents.css");
 ?>
 
 <form action="<?php echo JRoute::_('index.php?option=com_pbevents&task=listevents');?>" method="post" name="adminForm" id="adminForm">  
@@ -104,7 +108,9 @@ JHtml::_('dropdown.init');
 				</td>
 				
 				<td class="center">
-					<a href="<?php echo JRoute::_("index.php?option=com_pbevents&view=listattendees&id=".$event->id) ?>" > <?php echo count($event->attendees);?></a>
+					<a id="list-attendees" href="<?php echo JRoute::_("index.php?option=com_pbevents&view=listattendees&id=".$event->id) ?>">
+						<?php echo count($event->attendees) ?>
+					</a>
 				</td>
 				
 				<td class="center"><?php echo JHtml::_('jgrid.published', $event->publish, $i); ?></td>
