@@ -9,7 +9,7 @@
 defined( '_JEXEC' ) or die( 'Restricted access' );
 jimport('joomla.application.component.controlleradmin');
 
-class PBEventsControllerListAttendees extends JControllerAdmin
+class PBEventsControllerAttendees extends JControllerAdmin
 {
 	public function __construct($config = array())
 	{
