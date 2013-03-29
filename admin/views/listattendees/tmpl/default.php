@@ -34,9 +34,9 @@ JHtml::_('behavior.multiselect');
 				
 				<th>ID</th>
 				
-				<th><?php echo JText::_("Email") ?></th>
+				<th><?php echo JText::_("COM_PBEVENTS_VIEW_EMAIL_USER") ?></th>
 				
-				<th><?php echo JText::_("User") ?></th>
+				<th><?php echo JText::_("COM_PBEVENTS_VIEW_USERNAME") ?></th>
 			</tr>
 		</thead>
 		<tfoot>
