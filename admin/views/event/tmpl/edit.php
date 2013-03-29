@@ -37,22 +37,6 @@ Joomla.submitbutton = function(task) {
 		Joomla.submitform(task, document.getElementById('adminForm'));
 	}
 };
-
-function remove_clone_hidden(_this) {
-	jQuery(_this).parent().find(":hidden").remove(); // clean hidden
-};
-
-function clone_as_hidden(_this) {
-	var object = jQuery(_this);
-	var parent = object.parent();
-	var clone = object.clone();
-	clone.attr("type","hidden");
-	clone.attr("value","0");
-	clone.removeAttr("onclick");
-	clone.removeAttr("id");
-	clone.appendTo(parent);
-};
-
 jQuery(document).ready(function() {
 	// forcando o uso do locale selecionando
 	Locale.use('<?php echo $picker_locale;?>');

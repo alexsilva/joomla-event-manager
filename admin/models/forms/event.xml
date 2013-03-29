@@ -75,38 +75,44 @@
         default="0"
 	/>
 	<field
-        name="show_counter"
-        id="show_counter"
-        class="inputbox"
-        type="checkbox"
-        label="COM_PBEVENTS_SHOW_COUNTER"
-        description="COM_PEBEVENTS_TOOLTIP_SHOW_COUNTER"
-        filter="boolean"
-        default="0"
-        onclick="!this.checked ? clone_as_hidden(this): remove_clone_hidden(this);"
-	/>
+		name="show_counter"
+		type="radio"
+		class="btn-group"
+		default="0"
+		label="COM_PBEVENTS_SHOW_COUNTER"
+		description="COM_PEBEVENTS_TOOLTIP_SHOW_COUNTER">
+		<option
+			value="0">JNO</option>
+		<option
+			value="1">JYES</option>
+	</field>
 	<field
-        name="email_admin_success"
-        id="email_admin_success"
-        class="inputbox"
-        type="checkbox"
-        label="COM_PBEVENTS_NOTIFY_SUCCESS"
-        description="COM_PEBEVENTS_TOOLTIP_SUCCESS_EMAIL_ADMIN"
-        filter="boolean"
-        default="0"
-        onclick="!this.checked ? clone_as_hidden(this): remove_clone_hidden(this);"
-	/>
+		name="email_admin_success"
+		id="email_admin_success"
+		type="radio"
+		class="btn-group"
+		default="0"
+		label="COM_PBEVENTS_NOTIFY_SUCCESS"
+		description="COM_PEBEVENTS_TOOLTIP_SUCCESS_EMAIL_ADMIN">
+		<option
+			value="0">JNO</option>
+		<option
+			value="1">JYES</option>
+	</field>
 	<field
-        name="email_admin_failure"
-        id="email_admin_failure"
-        class="inputbox"
-        type="checkbox"
-        label="COM_PBEVENTS_NOTIFY_FAILURE"
-        description="COM_PEBEVENTS_TOOLTIP_FAILURE_EMAIL_ADMIN"
-        filter="boolean"
-        default="0"
-        onclick="!this.checked ? clone_as_hidden(this): remove_clone_hidden(this);"
-	/>
+		name="email_admin_failure"
+		id="email_admin_failure"
+		type="radio"
+		class="btn-group"
+		default="0"
+		label="COM_PBEVENTS_NOTIFY_FAILURE"
+		description="COM_PEBEVENTS_TOOLTIP_FAILURE_EMAIL_ADMIN"
+	>
+		<option
+			value="0">JNO</option>
+		<option
+			value="1">JYES</option>
+	</field>
 </fieldset>
 
 <fieldset name="event-dates" >
