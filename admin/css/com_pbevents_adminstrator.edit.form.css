@@ -18,13 +18,13 @@
 	vertical-align: middle;
 }
 
-.btn-delete-control, .btn-add-control, .btn-henable-control {
+.btn-delete-control, .btn-henable-control {
 	align: center !important;
 	padding: 1px !important;
 }
 
-.btn-delete-control, .btn-add-control {
-	border: dashed 1px gray;
+.btn-delete-control {
+	border-bottom: solid 1px gray;
 	cursor: pointer;
 }
 
@@ -38,18 +38,3 @@
 	vertical-align: middle !important;
 	padding-top: 0px !important;
 }
-
-.btn-add-control {
-	border: double 4px gray;
-}
-
-.btn-add-control > span {
-	margin-left: 1px !importante;
-	margin-bottom: 0px !important;
-}
-
-.btn-add-control > img, span {
-	vertical-align: middle;
-}
-
-
