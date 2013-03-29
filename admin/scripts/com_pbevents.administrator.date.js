@@ -119,22 +119,28 @@ function DateField(params) {
 		});
 		if (hide) root.css("display","none"); // hide only
 		else root.remove(); // remove all
-	}
-	this.setupName = function(index, object) {
-		var object = jQuery(object);
+	};
+	this.setupName = function(index, element) {
+		var object = jQuery(element);
 		object.attr("name", object.attr("name")+ self.params.sep +(
 				self.extra.id ? 
 					self.extra.id +self.params.sep +"update": 
 					self.count +self.params.sep +"create")
 				);
-	}
+	};
 	this.setup = function(extra) {
-		self.extra = extra
-	}
+		self.extra = extra;
+	};
 	this.createObject = function(event) {
-		if (self.extra.id == null) self.count++;
-		self.pk = self.extra.id ? self.extra.id: self.count;
-		
+		if (self.extra.id == null)
+		{
+			self.count++; self.pk = self.count;
+		}
+		else
+		{
+			self.pk = self.extra.id;
+			self.count = self.extra.id;
+		}
 		self.params.conteiner.append(self.makeHtml());
 		var object = jQuery("#"+self.rootID);
 		
@@ -152,13 +158,13 @@ function DateField(params) {
 		} else {
 			object.attr("id", self.rootID +self.params.sep +self.pk);
 		}
-		object.find(":input").each(self.setupName)
-		object.find("div.btn-delete-control").click(self.removeObject)
+		object.find(":input").each(self.setupName);
+		object.find("div.btn-delete-control").click(self.removeObject);
 		
 		self.setupPicker(object.find("[name^=date]", null));
 		self.setupPicker(null, object.find("[name^=hstart]"));
 		self.setupPicker(null, object.find("[name^=hend]"));
-		self.extra = {} // temp only
+		self.extra = {}; // temp only
 	}
 }
 
