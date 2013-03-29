@@ -87,7 +87,7 @@ JHtml::_('dropdown.init');
 				
 				<td class="center">
 					<select name="events_dates_choices" class="inputbox">
-						<?php echo JHtml::_('select.options', $this->makeDateOptions($event->dates), 'value', 'text', $this->state->get('filter.published'), true);?>
+						<?php echo JHtml::_('select.options', $this->makeDateOptions($event->dates));?>
 					</select>
 				</td>
 				
