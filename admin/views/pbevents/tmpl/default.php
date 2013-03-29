@@ -11,8 +11,6 @@ defined('_JEXEC') or die('Restricted access');
 
 $config = JFactory::getConfig();
 
-echo '<h1>'.JTEXT::_('COM_PBEVENTS_HEADING').'</h1>';
-
 ?>
 <?php if (!empty( $this->sidebar)): ?>
 	<div id="j-sidebar-container" class="span2">
@@ -24,6 +22,8 @@ echo '<h1>'.JTEXT::_('COM_PBEVENTS_HEADING').'</h1>';
 <?php endif;?>
 
 <div class="container-fluid">
+<h1><?php echo JTEXT::_('COM_PBEVENTS_HEADING') ?></h1>
+
 <!-- Begin Content -->
 <div class="row-fluid">
 	<div class="span6">
