@@ -57,85 +57,10 @@ class PbeventsController extends JControllerLegacy
 	 * @todo implement proper filtering and pagination on listed events
 	 *
 	 */
-	public function listevents()
-	{
-		JToolBarHelper::title(JText::_('COM_PBEVENTS_EVENTS_MANAGER').' '.JText::_('COM_PBEVENTS_ADMIN_LIST_EVENTS'), 'generic.png');
-		
-		$canDo = PBEventsHelper::getActions();
-		
-		// agindo conforme as permissões
-		if ($canDo->get('core.create'))
-		{
-			JToolBarHelper::addNew('event.add');
-		}
-		if ($canDo->get('core.edit'))
-		{
-			JToolBarHelper::editList("event.edit");
-		}
-		if ($canDo->get('core.delete'))
-		{
-			JToolBarHelper::deleteList(JText::_("COM_PBEBENTS_WARNNING_ONDELETE"), "events.delete");
-		}
-		if ($canDo->get('core.admin')) {
-			JToolBarHelper::preferences("com_pbevents");
-		}
-		// get attendees for events and set date to the right timezone!
-		$config =& JFactory::getConfig();
-		
-		// component configs
-		$params =& JComponentHelper::getParams("com_pbevents");
-		$list_limit = $params->get("alist_limit", 6);
-		
-		//get offset if needed
-		$input =& JFactory::getApplication()->input;
-		$limit = $input->get('limit',$list_limit,'integer');
-		$limitstart = $input->get('limitstart',0,'integer');
-		$filter_published = $input->get('filter_published',null,'string');
-		
-		$db =& JFactory::getDbo();
-		$query = $db->getQuery(true);
-		
-		$query->select('*')->from('#__pbevents_events');
-		$query->order('id DESC');
-		
-		if ($filter_published != "*")
-		{
-			if ($filter_published != null && is_integer((int)$filter_published))
-			{
-				$query->where('publish = '.(int)$filter_published);
-			}
-		} else {
-			$limit = 0; // all result.
-		}
-		$events = $db->setQuery($query)->loadObjectList();
-		$total_records = count($events);
-		
-		if ($limit > 0 && $total_records > $limitstart)
-		{
-			$events = array_slice($events, $limitstart, $limit);
-		}
-		foreach ($events as $event)
-		{
-			$query = $db->getQuery(true);
-			$query->select('*')->from('#__pbevents_rsvps');
-			$query->where('event_id = '.(int)$event->id);
-			// attendees results.
-			$event->attendees = $db->setQuery($query)->loadObjectList();
-			
-			$query = $db->getQuery(true);
-			$query->select('*')->from('#__pbevents_events_dates');
-			$query->where('event_id = '.(int)$event->id);
-			// attendees dates.
-			$event->dates = $db->setQuery($query)->loadObjectList();
-		}
-		$view = $this->getView('pbevents','html');
-		$view->setLayout('listevents');
-		$view->events = $events;
-		
-		$view->pagination = new JPagination($total_records, $limitstart, $limit);
-		$view->filter_published = $filter_published;
-		
-		$view->display();
+	public function listevents() {
+		// configurando a view da tarefa.
+		JFactory::getApplication()->input->set("view", "listevents");
+		return parent::display();
 	}
 	
 	/**
