@@ -13,7 +13,10 @@ class PBEventsControllerAttendees extends JControllerAdmin
 {
 	public function __construct($config = array())
 	{
-		$this->view_list = 'listattendees';
+		$input = JFactory::getApplication()->input;
+		$targetId = $input->get("id", 0, "integer");
+		
+		$this->view_list = 'listattendees&id='.(int)$targetId;
 		
 		parent::__construct($config);
 	}
